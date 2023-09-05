@@ -1,0 +1,480 @@
+/*Váriaveis de configuração*/
+:root {
+    --primary-color: #081622;
+    --secundery-color: crimson;
+    --white-color: #FFFFFF;
+    --golden-gradient: linear-gradient(to right, #EBC53E, #eccc56, #F7DE51, #f5df62, #EAC33D);
+    --light-gray-color: #eee;
+    --gap: 3rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+/*
+font-family: 'Cormorant', serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Roboto', sans-serif;
+*/
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Cormorant', serif;
+}
+
+h1 {
+    font-size: 8rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 5.5rem;
+}
+
+h3 {
+    font-size: 5rem;
+}
+
+h4 {
+    font-size: 4.5rem;
+}
+
+h5 {
+    font-size: 4rem;
+}
+
+h6 {
+    font-size: 3.5rem;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Cormorant', serif;
+    color: var(--white-color);
+}
+
+/* CLASSES */
+
+.main-bg {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+.white-bg {
+    background: var(--white-color);
+    color: var(--primary-color);
+}
+.gold-bg {
+    background: #caaa35;
+    color: var(--white-color);
+}
+
+
+.main-content {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 10rem var(--gap);
+}
+
+.section {
+    min-height: 90vh;
+}
+.section-fit{
+    min-height: 40vh;
+}
+
+/* CONFIGURAÇÃO DO MENU */
+.menu-spacing {
+    height: 65px;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+    border-bottom: 0.1rem solid var(--light-gray-color);
+}
+
+.menu-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.menu h1 {
+    font-size: 2.3rem;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.menu ul li a {
+    display: block;
+    padding: 2rem;
+    font-size: 1.8rem;
+    position: relative;
+    color: var(--primary-color);
+}
+
+.menu ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    width: 0;
+    height: 0.2rem;
+    background: var(--golden-gradient);
+    transition: all 300ms ease-in-out;
+}
+
+.menu ul li a:hover::after {
+    width: 65%;
+    left: 17%;
+}
+
+/* SEÇÃO - INTRO */
+.intro-content {
+    position: relative;
+    /* top: -8rem; */
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    align-items: center;
+    gap: var(--gap);
+    min-height: 90vh;
+}
+
+.intro-text-content,
+.intro-img {
+    display: flex;
+    flex-flow: column wrap;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.intro-img img {
+    width: 40rem;
+    align-items: center;
+}
+
+/* SEÇÃO - GRID */
+.grid-one-content {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    min-height: 90vh;
+}
+
+.grid-main-heading {
+    margin-bottom: 1rem;
+}
+
+.grid-description {
+    padding-bottom: 3rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    counter-reset: gridcounter;
+}
+
+.grid h3 {
+    font-size: 3rem;
+    position: relative;
+    /* padding-left: 3rem;*/
+    padding-bottom: 2rem;
+
+}
+
+/* .grid h3::before {
+    counter-increment: gridcounter;
+    content: counter(gridcounter);
+    position: absolute;
+    font-size: 8rem;
+    font-style: italic;
+    top: -4rem;
+    left: -2rem;
+} */
+
+/* SEÇÃO - SOBRE */
+.grid-sobre {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Usando fr para dividir igualmente o espaço disponível */
+    background: var(--white-color);
+    color: var(--primary-color);
+    border-radius: 1rem;
+    height: auto;
+    /* Em vez de 100% */
+}
+
+.gallery-img {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* Centralizar verticalmente */
+}
+
+.gallery-img img {
+    max-width: 100%;
+    /* Garante que a imagem não exceda a largura do pai */
+    height: auto;
+    /* Mantém a proporção da imagem */
+}
+
+.container-galeria {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    /* Ajuste conforme necessário */
+    padding-left: 5rem;
+}
+
+.grid h2 {
+    font-size: 2rem;
+    /* Ajuste conforme necessário */
+    padding-bottom: 1rem;
+    /* Ajuste conforme necessário */
+}
+
+/* SEÇÃO - NOSSO COMPROMISSO */
+.compromisso h2{
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 5rem;
+    font-size: 5rem;
+}
+.grid-compromisso {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 3rem;
+    color: var(--primary-color);
+    height: auto;
+}
+
+.gallery-img-compromisso {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* Centralizar verticalmente */
+}
+.container-galeria-compromisso {
+    /* display: flex;
+    flex-direction: column; */
+    justify-content: center;
+    padding: 2rem;
+    /* Ajuste conforme necessário */
+    padding-left: 5rem;
+}
+.texto-um, .texto-dois {
+    /* display: flex;
+    flex-direction: column; */
+    justify-content: center;
+    padding: 2rem;
+    box-shadow: 0rem 0rem 5rem rgba(202, 202, 202, 0.863);
+    /* Ajuste conforme necessário */
+    padding-left: 5rem;
+    border-radius: 1.6rem;
+}
+
+
+/* .gallery-img-compromisso img {
+    max-width: 100%;
+    /* Garante que a imagem não exceda a largura do pai
+    height: auto;
+    /* Mantém a proporção da imagem
+} */
+
+
+
+
+/* SEÇÃO - NOSSO CONTATO */
+.top3-content {
+    max-width: 120rem;
+    display: flex;
+    /* flex-flow: column wrap; */
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    min-height: 90vh;
+    text-align: center;
+}
+.top3-content h1{
+    font-size: 5rem;
+}
+.top3-content h2{
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+    font-size: large;
+    font-weight: 900;
+}
+.contact p{
+    padding: 0 0 5rem 0;
+}
+.form-group a{
+    border: 0.3rem solid var(--white-color);
+    border-radius: 1rem;
+    background: var(--white-color);
+    color: var(--primary-color);
+    padding: 1.5rem 2rem;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+.form-group a:hover{
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+
+/* RODAPÉ */
+.endereco{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 3rem;
+}
+.endereco h1{
+    font-size: small;
+}
+footer {
+    max-height: 100vh;
+    background: #EAC33D;
+    color: var(--white-color);
+}
+.footer{
+    text-align: center;
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+}
+.footer a{
+    font-family: 'Roboto', sans-serif;
+}
+.footer a{
+    color: var(--primary-color);
+}
+.heart{
+    color: red;
+}
+.footer p{
+    margin: 0;
+    padding: 1rem 3rem 0 3rem;
+}
+
+
+
+
+
+/* MEDIAS QUERRIES - RESPONSIVIDADE E ELEMENTOS FORÇADOS */
+.close-menu {
+    display: none;
+}
+
+@media (max-width: 960px) {
+    .grid-sobre {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .intro-content,
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .intro-img img {
+        width: 50%;
+    }
+
+    .menu {
+        bottom: 0;
+        text-align: center;
+    }
+
+    .menu-content,
+    .menu-content ul {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .menu-content {
+        height: 100vh;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .close-menu-label::after {
+        content: '≡';
+        position: fixed;
+        z-index: 2;
+        top: 2rem;
+        right: 2rem;
+        background: var(--primary-color);
+        color: var(--white-color);
+        font-size: 3rem;
+        line-height: 3rem;
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+
+    /* × */
+    .close-menu:checked~.menu {
+        display: block;
+    }
+
+    .close-menu:checked~.close-menu-label::after {
+        content: '×';
+    }
+
+    .menu-spacing {
+        display: none;
+    }
+    .grid-compromisso {
+        grid-template-columns: 1fr;
+        grid-row-gap: 3rem;
+    }
+    .endereco{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 5rem;
+    }
+    .endereco h1{
+        font-size: small;
+    }
+}
